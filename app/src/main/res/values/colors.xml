@@ -5,6 +5,15 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="deep_jungle_green">#1C5253</color>
+    <color name="opal">#9DC5BB</color>
+    <color name="steel_teal">#5E807F</color>
+    <color name="dark_green">#082D0F</color>
+    <color name="forest_green_traditional">#134611</color>
+    <color name="dartmouth_green">#306B34</color>
+    <color name="green_RYB">#62AB37</color>
+    <color name="russian_green">#7A9B76</color>
+    <color name="manatee">#A0A4B8</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
