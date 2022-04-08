@@ -1,4 +1,4 @@
-package com.pettigrew.AD340_22
+package com.pettigrew.ad340_22
 
 import org.junit.Test
 
