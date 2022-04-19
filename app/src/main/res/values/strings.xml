@@ -10,5 +10,12 @@
         \n <li>Enjoy baking breads and pizza</li>
         \n <li>Have a siamese cat named Raja</li>
     </string>
+    <string name="edit_message">Enter a login</string>
+    <string name="button_send">Login</string>
+    <string name="button_food">Food</string>
+    <string name="button_activities">Activities</string>
+    <string name="button_notes">Notes</string>
+    <string name="button_reservations">Reservations</string>
+
 
 </resources>
