@@ -2,6 +2,7 @@ package com.pettigrew.ad340_22
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -16,10 +17,11 @@ class MainActivity : AppCompatActivity() {
 //        Log.d("MainActivity", "Hello World")
 
     }
-    fun sendMessage(view: View) {
+    fun sendMessage(button: View) {
         // Do something in response to button click
-        val text = "test"
+        val b = button as Button
+        val buttonText = b.text.toString()
         val duration = Toast.LENGTH_SHORT
-        Toast.makeText(applicationContext, text, duration).show()
+        Toast.makeText(applicationContext, buttonText, duration).show()
     }
 }
