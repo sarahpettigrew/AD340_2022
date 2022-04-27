@@ -3,26 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/mainActivity">
 
-    <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.pettigrew.ad340_22.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.pettigrew.ad340_22.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main">
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.pettigrew.ad340_22.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+            android:id="@+id/action_mainActivity_to_movieActivity"
+            app:destination="@id/movieActivity" />
+    </activity>
+    <activity
+        android:id="@+id/movieActivity"
+        android:name="com.pettigrew.ad340_22.MovieActivity"
+        android:label="activity_movie"
+        tools:layout="@layout/activity_movie">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+            android:id="@+id/action_movieActivity_to_movieDetailActivity"
+            app:destination="@id/movieDetailActivity" />
+        <action
+            android:id="@+id/action_movieActivity_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </activity>
+    <activity
+        android:id="@+id/movieDetailActivity"
+        android:name="com.pettigrew.ad340_22.MovieDetailActivity"
+        android:label="activity_movie_detail"
+        tools:layout="@layout/activity_movie_detail">
+        <action
+            android:id="@+id/action_movieDetailActivity_to_movieActivity"
+            app:destination="@id/movieActivity" />
+    </activity>
 </navigation>
