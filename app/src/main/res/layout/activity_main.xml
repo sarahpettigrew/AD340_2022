@@ -20,13 +20,13 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="#004D40"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
+        app:layout_constraintEnd_toStartOf="@+id/loginButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -40,14 +40,14 @@
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/movieButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="142dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/button_reservations"
-        android:onClick="sendMessage"
+        android:text="@string/button_movies"
+        android:onClick="buttonSelected"
         android:textColor="#66BB6A"
         app:layout_constraintEnd_toStartOf="@+id/button9"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +66,7 @@
         android:textColor="#66BB6A"
         app:layout_constraintEnd_toStartOf="@+id/button10"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7"
+        app:layout_constraintTop_toBottomOf="@+id/movieButton"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -80,8 +80,8 @@
         android:onClick="sendMessage"
         android:textColor="#66BB6A"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
+        app:layout_constraintStart_toEndOf="@+id/movieButton"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
         tools:ignore="TextContrastCheck" />
 
     <Button
