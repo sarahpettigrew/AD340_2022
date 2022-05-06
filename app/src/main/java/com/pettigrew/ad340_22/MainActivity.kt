@@ -24,6 +24,10 @@ class MainActivity : AppCompatActivity() {
             val intent =  Intent(this, MovieActivity::class.java)
             startActivity(intent)
         }
+        else if(button.id == R.id.trafficButton){
+            val intent = Intent(this, TrafficActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun sendMessage(button: View) {

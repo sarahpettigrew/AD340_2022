@@ -55,14 +55,14 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/trafficButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/button_food"
-        android:onClick="sendMessage"
+        android:text="@string/button_traffic"
+        android:onClick="buttonSelected"
         android:textColor="#66BB6A"
         app:layout_constraintEnd_toStartOf="@+id/button10"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,9 +93,9 @@
         android:text="@string/button_activities"
         android:onClick="sendMessage"
         android:textColor="#66BB6A"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button8"
+        app:layout_constraintBaseline_toBaselineOf="@+id/trafficButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button8"
+        app:layout_constraintStart_toEndOf="@+id/trafficButton"
         tools:ignore="TextContrastCheck" />
 
     <androidx.constraintlayout.widget.Guideline

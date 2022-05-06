@@ -3,6 +3,7 @@ package com.pettigrew.ad340_22
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,11 +51,13 @@ class MovieActivity : AppCompatActivity() {
             rowView.setOnClickListener {
                 Toast.makeText(rowView.context, Movies.movies[position][0], Toast.LENGTH_SHORT)
                     .show()
+
                 val intent = Intent(context, MovieDetailActivity::class.java)
                 val b = Bundle()
                 b.putStringArray("movie details", Movies.movies[position])
                 intent.putExtras(b)
                 context.startActivity(intent)
+//                MovieActivity().showMovie(position)
             }
 
             movieTitle.text = values[position][0]
