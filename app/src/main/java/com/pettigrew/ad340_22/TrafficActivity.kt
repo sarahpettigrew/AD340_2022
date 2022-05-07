@@ -1,7 +1,6 @@
 package com.pettigrew.ad340_22
 
 import android.content.Context
-import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.appcompat.app.AppCompatActivity
@@ -12,17 +11,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
-import com.pettigrew.ad340_22.TrafficActivity.TrafficAdapter
 import com.squareup.picasso.Picasso
 
 class TrafficActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_traffic)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar1)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
+        title = "Seattle Traffic Cameras"
 
         //check if network connected
         //References: https://stackoverflow.com/questions/51141970/check-internet-connectivity-android-in-kotlin
@@ -50,9 +48,17 @@ class TrafficActivity : AppCompatActivity() {
                     val listAdapter = TrafficAdapter(data)
                     cameraList?.adapter = listAdapter
                 }
+
             }
             } else {
+            Toast.makeText(this, "No internet connection", Toast.LENGTH_LONG)
+                .show()
                 Log.i("Internet", "NetworkCapabilities.NONE")
+                setContentView(R.layout.no_internet)
+                val connectionToolbar = findViewById<Toolbar>(R.id.toolbar2)
+                setSupportActionBar(connectionToolbar)
+                supportActionBar?.setDisplayHomeAsUpEnabled(true)
+                title = "Seattle Traffic Cameras - No Internet"
             }
         }
     inner class TrafficAdapter(private val values: List<TrafficCam>) : ArrayAdapter<TrafficCam?>(applicationContext, 0, values) {
@@ -72,6 +78,7 @@ class TrafficActivity : AppCompatActivity() {
             if(imgURL.isNotEmpty()){
                 Picasso.get().load(imgURL).into(image)
             }
+            this.notifyDataSetChanged()
             return rowView
         }
     }
