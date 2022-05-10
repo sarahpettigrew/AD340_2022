@@ -20,13 +20,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun buttonSelected(button : View){
-        if(button.id == R.id.movieButton){
-            val intent =  Intent(this, MovieActivity::class.java)
-            startActivity(intent)
-        }
-        else if(button.id == R.id.trafficButton){
-            val intent = Intent(this, TrafficActivity::class.java)
-            startActivity(intent)
+        when (button.id) {
+            R.id.movieButton -> {
+                val intent =  Intent(this, MovieActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.trafficButton -> {
+                val intent = Intent(this, TrafficActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.mapsButton -> {
+            }
         }
     }
 
