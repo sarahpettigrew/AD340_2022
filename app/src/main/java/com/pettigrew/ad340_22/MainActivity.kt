@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             R.id.mapsButton -> {
+                val intent = Intent(this, TrafficMapsActivity::class.java)
+                startActivity(intent)
             }
         }
     }

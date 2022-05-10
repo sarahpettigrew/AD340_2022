@@ -1,12 +1,16 @@
 package com.pettigrew.ad340_22
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
@@ -16,7 +20,11 @@ class TrafficMapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        setContentView(R.layout.activity_traffic_maps)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        title = "Map of Seattle Traffic Cameras"
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -37,8 +45,21 @@ class TrafficMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         myMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        myMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        myMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val nsc = LatLng(47.6989479, -122.334865)
+        myMap.addMarker(MarkerOptions().position(nsc).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)).title("North Seattle College"))
+        TrafficCam.loadUrlData(this) { data ->
+            for (i in 0 until data.size) {
+                googleMap.apply {
+                    val coordinates = LatLng(data[i].coordinates[0], data[i].coordinates[1])
+                    val description = data[i].description
+                    addMarker(
+                        MarkerOptions()
+                            .position(coordinates)
+                            .title(description)
+                    )
+                }
+            }
+        }
+        myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nsc, 12.0f))
     }
 }
