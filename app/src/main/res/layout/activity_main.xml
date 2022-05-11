@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/loginText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -33,10 +33,10 @@
         android:layout_marginEnd="16dp"
         android:text="@string/button_send"
         android:textColor="#66BB6A"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/loginText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2"
+        app:layout_constraintStart_toEndOf="@+id/loginText"
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <Button
@@ -51,7 +51,7 @@
         android:textColor="#66BB6A"
         app:layout_constraintEnd_toStartOf="@+id/mapsButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/emailText"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -74,14 +74,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="141dp"
+        android:layout_marginTop="142dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/button_maps"
         android:onClick="buttonSelected"
+        android:text="@string/button_maps"
         android:textColor="#66BB6A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/movieButton"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:layout_constraintTop_toBottomOf="@+id/passwordText"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -111,4 +111,30 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="584dp" />
+
+    <EditText
+        android:id="@+id/emailText"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/passwordText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginText" />
+
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/emailText"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,11 +10,13 @@
         \n <li>Enjoy baking breads and pizza</li>
         \n <li>Have a siamese cat named Raja</li>
     </string>
-    <string name="edit_message">Enter a login</string>
+    <string name="edit_message">Enter login...</string>
+    <string name="email">Enter email...</string>
+    <string name="password">Enter password...</string>
     <string name="button_send">Login</string>
     <string name="button_traffic">Traffic Cams</string>
     <string name="button_activities">Activities</string>
-    <string name="button_maps">Traffic Cam Map</string>
+    <string name="button_maps">Camera Map</string>
     <string name="button_movies">Movies</string>
     <string name="title_activity_movie">Movie Activity</string>
     <!-- Strings used for fragments for navigation -->
