@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 //        textView.setText(R.string.bulleted_list)
 //        Log.d("MainActivity", "Hello World")
 
-        // Instantiate a SharedPreferencesHelper class
+         //Instantiate a SharedPreferencesHelper class
         sharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
         sharedPreferencesHelper = SharedPreferencesHelper(sharedPreferences!!)
 
@@ -39,10 +39,9 @@ class MainActivity : AppCompatActivity() {
         emailTextView = findViewById(R.id.emailText)
         passwordTextView = findViewById(R.id.passwordText)
 
-    loginTextView!!.setText(sharedPreferencesHelper!!.getEntry("name"))
-    emailTextView!!.setText(sharedPreferencesHelper!!.getEntry("email"))
-    passwordTextView!!.setText(sharedPreferencesHelper!!.getEntry("password"))
-
+        loginTextView!!.setText(sharedPreferencesHelper!!.getEntry("name"))
+        emailTextView!!.setText(sharedPreferencesHelper!!.getEntry("email"))
+        passwordTextView!!.setText(sharedPreferencesHelper!!.getEntry("password"))
 
         val mSignInButton = findViewById<Button>(R.id.loginButton)
         mSignInButton.setOnClickListener {
@@ -51,10 +50,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonSelected(button : View){
+    fun buttonSelected(button: View) {
         when (button.id) {
             R.id.movieButton -> {
-                val intent =  Intent(this, MovieActivity::class.java)
+                val intent = Intent(this, MovieActivity::class.java)
                 startActivity(intent)
             }
             R.id.trafficButton -> {
@@ -65,29 +64,32 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, TrafficMapsActivity::class.java)
                 startActivity(intent)
             }
-            R.id.loginButton ->{
-                val intent = Intent(this, FirebaseActivity::class.java)
-                startActivity(intent)
-
-            }
         }
     }
+
     private fun signIn() {
         Log.d("FIREBASE", "signIn")
-
         // 1 - validate display name, email, and password entries
-        if(emailTextView!!.text.isBlank() || emailTextView!!.text == null || !emailTextView!!.text.contains("@") || !emailTextView!!.text.contains(".")){
+        if (emailTextView!!.text.isBlank() || emailTextView!!.text == null || !emailTextView!!.text.contains(
+                "@"
+            ) || !emailTextView!!.text.contains(".")
+        ) {
             //show error page or toast to user that they need to enter a valid email
             return
         }
-        if(passwordTextView!!.text.isBlank() || passwordTextView!!.text == null || passwordTextView!!.text.length < 8 || !passwordTextView!!.text.contains(Regex("[a-z]"))||!passwordTextView!!.text.contains(Regex("[0-9]"))){
+        if (passwordTextView!!.text.isBlank() || passwordTextView!!.text == null || passwordTextView!!.text.length < 8 || !passwordTextView!!.text.contains(
+                Regex("[a-z]")
+            ) || !passwordTextView!!.text.contains(Regex("[0-9]"))
+        ) {
 
             /*show error page or toast to user that they need to enter a valid password may need to break this out into specific case (empty/null compared to not meeting security requirements (length, numbers, letters)*/
             return
         }
+
         val login: String = loginTextView!!.text.toString()
         val email: String = emailTextView!!.text.toString()
         val password: String = passwordTextView!!.text.toString()
+
 
         // 2 - save valid entries to shared preferences
 
@@ -114,7 +116,7 @@ class MainActivity : AppCompatActivity() {
                                 // Go to FirebaseActivity
                                 startActivity(
                                     Intent(
-                                        this@MainActivity,
+                                        this,
                                         FirebaseActivity::class.java
                                     )
                                 )
@@ -123,7 +125,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     Log.d("FIREBASE", "sign-in failed")
                     Toast.makeText(
-                        this@MainActivity, "Sign In Failed",
+                        this, "Sign In Failed",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
