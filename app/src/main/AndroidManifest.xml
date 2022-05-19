@@ -59,6 +59,12 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AD340_2022.NoActionBar" />
         <activity
+            android:name=".FirebaseActivity"
+            android:exported="false"
+            android:label="firebase"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AD340_2022.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

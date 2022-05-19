@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
                 "@"
             ) || !emailTextView!!.text.contains(".")
         ) {
+            Log.d("VALIDATION", "email not valid")
             //show error page or toast to user that they need to enter a valid email
             return
         }
